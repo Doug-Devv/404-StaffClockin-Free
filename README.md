@@ -3,7 +3,7 @@
 A lightweight and functional staff clock-in system with Discord webhook logging. This script records when staff members clock in and out, calculates their total time on duty, and sends it to a Discord webhook using an embed format.
 
 
-IF ANY ISSUES OCCUR CONTACT ME ON DISCORD @LUA.DADDY OR JOIN THE SUPPORT DISCORD https://disocrd.gg/404solutions
+IF ANY ISSUES OCCUR CONTACT ME ON DISCORD @LUA.DADDY OR JOIN THE SUPPORT DISCORD https://discord.gg/404solutions
 
 
 ---
