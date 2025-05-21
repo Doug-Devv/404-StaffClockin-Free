@@ -6,6 +6,13 @@ A lightweight and functional staff clock-in system with Discord webhook logging.
 IF ANY ISSUES OCCUR CONTACT ME ON DISCORD @LUA.DADDY OR JOIN THE SUPPORT DISCORD https://discord.gg/404solutions
 
 
+Can't Believe I have to say this But, Make sure you input this is your server.cfg in order for ace perms to work
+add_ace group.admin command.clockin allow
+add_ace group.admin command.clockout allow
+
+REPLACE ADMIN WITH YOUR ACE PERM!
+
+
 ---
 
 ## Features
