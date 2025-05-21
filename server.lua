@@ -60,7 +60,7 @@ RegisterCommand("clockout", function(source)
     if startTime then
         local seconds = os.time() - startTime
         durationText = FormatDuration(seconds)
-        dutyTimers[source] = nil  -- Clear timer after use
+        dutyTimers[source] = nil -- Clear timer after use
     end
 
     sendToDiscord(name, "out", discordId, durationText)
@@ -70,6 +70,27 @@ RegisterCommand("clockout", function(source)
         description = 'You have clocked out.',
         duration = 5000
     })
+end)
+
+-- Automatically clock out on disconnect
+AddEventHandler("playerDropped", function(reason)
+    local src = source
+    local name = GetPlayerName(src)
+    local discordId = GetDiscordId(src)
+
+    if dutyTimers[src] and discordId then
+        local startTime = dutyTimers[src]
+        local durationText = "Unknown"
+
+        if startTime then
+            local seconds = os.time() - startTime
+            durationText = FormatDuration(seconds)
+        end
+
+        dutyTimers[src] = nil -- Clean up
+
+        sendToDiscord(name, "out", discordId, durationText)
+    end
 end)
 
 function sendToDiscord(name, action, discordId, duration)
